@@ -21,8 +21,8 @@ export function Rating(props:RatingProps) {
 
 type PropsType ={
     selected:boolean
-    value: 0|1|2|3|4|5
-    onClick:(value: 0|1|2|3|4|5)=>void
+    value: 1|2|3|4|5
+    onClick:(value: 1|2|3|4|5)=>void
 }
         function Star(props: PropsType) {
         return  <span onClick={()=>{props.onClick(props.value)}}> {props.selected ? <b>star </b>: 'star '}</span>

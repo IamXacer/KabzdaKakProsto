@@ -1,11 +1,11 @@
 import React, {useState} from "react";
 type PropsAccordion={
     title:string
-    collapsed:boolean
+    //collapsed:boolean
 
 }
 
-function UncontrolAccordion(props:PropsAccordion) {
+export function UncontrolAccordion(props:PropsAccordion) {
     let [collapsed,setCollapsed] =useState(false)
     return (
         <div  >
@@ -35,4 +35,3 @@ function AccordionBody() {
             <li>3</li>
         </ul>)}
 
-export default UncontrolAccordion
