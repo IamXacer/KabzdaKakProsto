@@ -3,11 +3,13 @@ export type RatingType = 0|1|2|3|4|5
 
 type RatingProps ={
     defaltValue?:RatingType
+    onChange:(value:RatingType)=>void
 
 }
 
 export function UncontrolRating(props:RatingProps) {
-    let [value,setValue] = useState<RatingType>(props.defaltValue?props.defaltValue : 0)
+    let [value,setValue] = useState<RatingType>
+    (props.defaltValue ? props.defaltValue : 0)
     return (
         <div >
             < Star selected={value >0} setValue={setValue} value={1}/>

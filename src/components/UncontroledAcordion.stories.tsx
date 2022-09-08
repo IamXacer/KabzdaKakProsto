@@ -9,8 +9,8 @@ export default {
 }
 
 const callback = action('accordion mode change event fired')
-
-/*export const  MenuCollapsedMode = ()=> <UncontrolAccordion title={'Menu'}  />
+/*
+export const  MenuCollapsedMode = ()=> <UncontrolAccordion title={'Menu'}  />
 export const  UsersCollapsedMode = ()=> <UncontrolAccordion title={'Users'} />*/
 
 export const ModeChanging = () => {

@@ -9,9 +9,9 @@ export default {
 }
 const callback= action('rating changed')
 
-export const EmptyRating = () => <UncontrolRating defaltValue ={0}/>
-export const Rating1 = () => <UncontrolRating defaltValue ={1} />
-export const Rating2 = () => <UncontrolRating defaltValue ={2}/>
-export const Rating3 = () => <UncontrolRating defaltValue ={3} />
-export const Rating4 = () => <UncontrolRating defaltValue ={4} />
-export const Rating5 = () => <UncontrolRating defaltValue ={5} />
+export const EmptyRating = () => <UncontrolRating defaltValue ={0} onChange={callback}/>
+export const Rating1 = () => <UncontrolRating defaltValue ={1} onChange={callback}/>
+export const Rating2 = () => <UncontrolRating defaltValue ={2} onChange={callback}/>
+export const Rating3 = () => <UncontrolRating defaltValue ={3}  onChange={callback}/>
+export const Rating4 = () => <UncontrolRating defaltValue ={4} onChange={callback}/>
+export const Rating5 = () => <UncontrolRating defaltValue ={5} onChange={callback}/>
