@@ -18,7 +18,7 @@ function App() {
             */}
 
 <Rating value={ratingValue} onClick={setRatingValue}/>
-            <UncontroledOnOff on={on} onChange={(on)=>{setOn(on)}} />
+            <UncontroledOnOff  onChange={(on)=>{setOn(on)}} />
          {/*   <OnOff on={false}/>
 
 
