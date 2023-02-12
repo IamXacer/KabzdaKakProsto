@@ -3,21 +3,16 @@ type PropsAccordion={
     title:string
     collapsed:boolean
     onChange:()=>void
+   items:string[]
    /* setCollapsed:( collapsed:boolean)=>void*/
 }
-
 function Accordion(props:PropsAccordion) {
     return (
         <div>
             <AccordionTitle title={props.title}
             onChange={props.onChange}
-            />
-
-            {!props.collapsed && <AccordionBody/>}
-        </div>
-    )
-
-}
+            />{!props.collapsed && <AccordionBody items={props.items} />}
+        </div>)}
 
 type PropsAccordionTitle={
     title:string
@@ -30,14 +25,13 @@ function AccordionTitle(props:PropsAccordionTitle) {
         <div ><h3 onClick={props.onChange}></h3></div>)}
 
 type AccordionBodyType ={
-    collapsed :boolean
+    items:string[]
 }
-function AccordionBody() {
+function AccordionBody(props:AccordionBodyType) {
     return (
         <ul>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
+            {props.items.map((i,index)=>
+                <li key={index}>{i}</li>)}
         </ul>)}
 
 export default Accordion
