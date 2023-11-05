@@ -10,7 +10,7 @@ export default {
 
 
 export const SelectStories = () => {
-   const [value,setValue] =  useState(2)
+  const [value,setValue] = useState(2)
     return(
     <Select onChange={setValue} value={value}
             items={[{value: 1, title: 'Dimitch'},
