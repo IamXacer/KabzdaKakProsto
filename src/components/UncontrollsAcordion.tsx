@@ -1,59 +1,37 @@
-import React, {useReducer, useRef, useState} from "react";
-
-
-type ItemType ={
-    title:string
-    value:any
-}
-
+import React, {useState} from "react";
 type PropsAccordion={
     title:string
-    collapsed:boolean
-    items:ItemType[]
-    onChange:()=>void
-    onClick:(value:any)=>void
-}
-type PropsAccordionTitle={
-    title:string
-    onChanges:()=>void
-}
+    //collapsed:boolean
 
-type ActionType ={
-    type:string
-}
-
-const reducer = (state:boolean,action:ActionType) => {
-    debugger
-    if (action.type === 'TOGGLE-COLLAPSED'){
-        return !state
-    }
-    return state
 }
 
 export function UncontrolAccordion(props:PropsAccordion) {
-   /* let [collapsed,setCollapsed] =useState(false)*/
-    let [collapsed,dispatch] =useReducer(reducer,false)
+    let [collapsed,setCollapsed] =useState(false)
     return (
         <div  >
+            <AccordionTitle title={props.title} onClick={()=>{setCollapsed(!collapsed)}} />
+            {/*<button onClick={()=>{setCollapsed(!collapsed)}}>TOGLEE</button>*/}
+            {!collapsed && <AccordionBody/>}
+        </div>
+    )
 
-           {/* <AccordionTitle title={props.title} onChanges={()=>{dispatch() setCollapsed(!collapsed)}} />*/}
-            <AccordionTitle title={props.title} onChanges={()=>{
-                debugger
-                dispatch({type:'TOGGLE-COLLAPSED'}) }} />
-            {!collapsed && <AccordionBody items={props.items} onClick={props.onClick}/>}
-        </div>)}
-
-function AccordionTitle(props:PropsAccordionTitle) {
-    return (<div ><h3 onClick={()=>{props.onChanges()}}>{props.title}</h3></div>)}
-
-
-export type AccordionBodyType = {
-    items:ItemType[]
-    onClick:(value:any)=>void
 }
 
-function AccordionBody(props:AccordionBodyType) {
+type PropsAccordionTitle={
+    title:string
+    onClick:()=>void
+}
+
+function AccordionTitle(props:PropsAccordionTitle) {
     return (
-        <ul  >{props.items.map((i,index)=>
-            <li onClick={()=>{props.onClick(i.value)}} key={index}>{i.title}</li>)}</ul>)}
+        <div ><h3 onClick={()=>{props.onClick()}}>{props.title}</h3></div>)}
+
+
+function AccordionBody() {
+    return (
+        <ul  >
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>)}
 

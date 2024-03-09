@@ -1,5 +1,5 @@
 .select span.main {
-border: 2px solid #1ea7fd ;
+    border: 2px solid #1ea7fd ;
     background-color: #d4e1e3;
     display:inline-block ;
     min-height: 20px;
@@ -11,8 +11,7 @@ border: 2px solid #1ea7fd ;
     padding: 5px;
     border: 1px solid black;
 }
-
-/*
-select.active  .items{
-   display: block;
-}*/
+.item.selected:hover:not(.selected) {
+    background-color: #1ea7fd;
+    color: white;
+}
